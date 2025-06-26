@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kreeya MVP</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- GAPI Script -->
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: url('https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1470&q=80')
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+      }
+
+      .container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        text-align: center;
+        color: #1a73e8;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      button {
+        background: #1a73e8;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        display: block;
+        margin: 1rem auto;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #135db2;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1rem;
+      }
+
+      li {
+        background-color: #f1f6ff;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      li:hover {
+        transform: translateY(-4px);
+      }
+
+      .loading,
+      .error {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+
+      .error {
+        color: red;
+      }
+
+      @media (max-width: 480px) {
+        main {
+          padding: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <h1>Kreeya MVP Calendar App</h1>
+        <div id="root"></div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
